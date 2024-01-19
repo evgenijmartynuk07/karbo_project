@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv()
 
 
 
@@ -78,11 +79,11 @@ WSGI_APPLICATION = 'karbo_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql',
-        'USER': 'django',
-        'PASSWORD': 'mysql5250',
-        'HOST': 'localhost',   # або '127.0.0.1'
-        'PORT': '3306',        # за замовчуванням порт MySQL - 3306
+        'NAME': os.environ.get("NAME", None),
+        'USER': os.environ.get("USER", None),
+        'PASSWORD': os.environ.get("PASSWORD", None),
+        'HOST': os.environ.get("HOST", None),   # або '127.0.0.1'
+        'PORT': os.environ.get("PORT", None),        # за замовчуванням порт MySQL - 3306
     }
 }
 
