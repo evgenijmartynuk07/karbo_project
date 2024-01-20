@@ -3,7 +3,7 @@ from .views import index
 
 
 urlpatterns = [
-    path("", index, name="task-list"),
+    path("", index, name="main"),
 ]
 
 
