@@ -1,2 +1,5 @@
 venv
 .idea
+blog/__pycache__/
+karbo_project/__pycache__/
+db.sqlite3

@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-d$x293g1@pj1_yirgisk#vwqqi$3n$*r8l+(dfxr^y^8_4^&ac
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['104.248.134.217', 'localhost']
+
+ALLOWED_HOSTS = ['104.248.134.217', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_bootstrap4',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'karbo_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,11 +124,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+
+]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

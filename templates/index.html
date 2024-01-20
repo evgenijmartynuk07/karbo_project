@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+  <title>Your Web Page</title>
+    <link>
+</head>
+<body class="d-flex flex-column min-vh-100" style="background-image: url('{% static "main/images/background.jpg"%}')">
+<div class="bubbles-container"></div>
+    <div class="container mt-5 alert alert-info">
+      <div class="p-4 text-center rounded transparent-bg ">
+        <h1>On this page is the API usage guide.</h1>
+        <p>This is a sample web page with a background image.</p>
+        <h4>To use the API and retrieve data, use the following link: <a href="">link API</a></h4>
+        <h4>To use the API and retrieve data, use the Swagger doc: <a href="">Swagger API</a></h4>
+      </div>
+    </div>
+<script src="{% static 'main/js/bubbles.js' %}"></script>
+</body>
+</html>

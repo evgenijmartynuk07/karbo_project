@@ -1,0 +1,34 @@
+.transparent-bg {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bubbles-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.bubble {
+    width: 40px;
+    height: 40px;
+    background-color: #bee5eb;
+    position: absolute;
+    border-radius: 50%;
+    animation: floatBubble 16s infinite;
+}
+
+@keyframes floatBubble {
+    0% {
+        transform: translateY(100vh);
+    }
+    50% {
+        transform: translateY(calc(-50px));
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
